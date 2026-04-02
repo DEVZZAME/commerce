@@ -54,14 +54,18 @@ kotlin {
     }
 }
 
-tasks.withType<Test>().configureEach {
-    useJUnitPlatform()
-}
-
 val envFile = rootProject.file(".env")
 val envProperties = Properties().apply {
     if (envFile.exists()) {
         envFile.inputStream().use(::load)
+    }
+}
+
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
+
+    envProperties.forEach { key, value ->
+        environment(key.toString(), value.toString())
     }
 }
 
