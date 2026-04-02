@@ -20,7 +20,10 @@ Kotlin + Spring Boot 기반 이커머스 백엔드 학습 프로젝트입니다.
 
 ### Environment Variables
 
-로컬 실행은 `local` 프로필 기준으로 동작합니다.
+프로필은 `local`, `prod`로 분리되어 있습니다.
+
+- `local`: 애플리케이션이 `localhost:3306/commerce`로 직접 연결
+- `prod`: 모든 DB 접속 정보를 환경변수에서 읽어서 연결
 
 필수 환경변수:
 
@@ -67,6 +70,14 @@ docker compose down
 
 ```bash
 SPRING_PROFILES_ACTIVE=local ./gradlew bootRun
+```
+
+`bootRun`은 프로젝트 루트의 `.env`를 자동으로 읽습니다.
+
+프로덕션 프로필 예시:
+
+```bash
+SPRING_PROFILES_ACTIVE=prod ./gradlew bootRun
 ```
 
 ## Project Structure

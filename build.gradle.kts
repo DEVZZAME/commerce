@@ -1,5 +1,6 @@
 import org.gradle.api.tasks.testing.Test
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     kotlin("jvm") version "1.9.25"
@@ -55,4 +56,17 @@ kotlin {
 
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
+}
+
+val envFile = rootProject.file(".env")
+val envProperties = Properties().apply {
+    if (envFile.exists()) {
+        envFile.inputStream().use(::load)
+    }
+}
+
+tasks.named<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
+    envProperties.forEach { key, value ->
+        environment(key.toString(), value.toString())
+    }
 }

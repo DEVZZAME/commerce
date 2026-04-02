@@ -1,26 +1,8 @@
 spring:
+  config:
+    import: optional:file:.env[.properties]
   application:
     name: commerce
-
----
-spring:
-  config:
-    activate:
-      on-profile: local
-  datasource:
-    url: jdbc:mariadb://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:commerce}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
-    driver-class-name: org.mariadb.jdbc.Driver
-  jpa:
-    open-in-view: false
-    hibernate:
-      ddl-auto: none
-    properties:
-      hibernate:
-        format_sql: true
-        jdbc:
-          time_zone: UTC
 
 server:
   port: ${SERVER_PORT:8080}
