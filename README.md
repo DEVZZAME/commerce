@@ -16,6 +16,23 @@ Kotlin + Spring Boot 기반 이커머스 백엔드 학습 프로젝트입니다.
 ### Requirements
 
 - JDK 17
+- MariaDB 10.x or later
+
+### Environment Variables
+
+로컬 실행은 `local` 프로필 기준으로 동작합니다.
+
+필수 환경변수:
+
+- `DB_USERNAME`
+- `DB_PASSWORD`
+
+선택 환경변수:
+
+- `DB_HOST` default: `localhost`
+- `DB_PORT` default: `3306`
+- `DB_NAME` default: `commerce`
+- `SERVER_PORT` default: `8080`
 
 ### Run Test
 
@@ -26,7 +43,7 @@ Kotlin + Spring Boot 기반 이커머스 백엔드 학습 프로젝트입니다.
 ### Run Application
 
 ```bash
-./gradlew bootRun
+SPRING_PROFILES_ACTIVE=local ./gradlew bootRun
 ```
 
 ## Project Structure
@@ -48,4 +65,7 @@ src/
 ## Current Status
 
 - `STEP 00-01. IntelliJ에서 Spring Boot Kotlin 프로젝트 생성` 완료
-- 다음 진행 예정: `STEP 00-02. Gradle Kotlin DSL 정리`
+- `STEP 00-02. Gradle Kotlin DSL 정리` 완료
+- `STEP 00-03. 필수 의존성 추가` 완료
+- `STEP 00-04. application.yml 설정` 완료
+- 다음 진행 예정: `STEP 00-05. docker mariadb 실행 환경 구성`

@@ -1,15 +1,15 @@
 # Kotlin + Spring Boot 이커머스 백엔드 학습 진행표
 
-last_reviewed_step: STEP 00-02
-current_focus: 필수 의존성 추가
+last_reviewed_step: STEP 00-04
+current_focus: docker mariadb 실행 환경 구성
 review_rule: 완료된 항목만 x 처리, 다음 step은 가장 앞의 미완료 항목부터 진행
 
 ## 0단계. 프로젝트 생성 및 초기 설정
 - [x] STEP 00-01. IntelliJ에서 Spring Boot Kotlin 프로젝트 생성
 - [x] STEP 00-02. Gradle Kotlin DSL 정리
-- [ ] STEP 00-03. 필수 의존성 추가
-- [ ] STEP 00-04. application.yml 설정
-- [ ] STEP 00-05. docker mysql 실행 환경 구성
+- [x] STEP 00-03. 필수 의존성 추가
+- [x] STEP 00-04. application.yml 설정
+- [ ] STEP 00-05. docker mariadb 실행 환경 구성
 - [ ] STEP 00-06. QueryDSL 설정 및 QClass 생성 확인
 - [ ] STEP 00-07. 기본 패키지 구조 생성
 - [ ] STEP 00-08. 헬스체크 API 작성
