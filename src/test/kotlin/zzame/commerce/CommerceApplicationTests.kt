@@ -23,7 +23,8 @@ class CommerceApplicationTests {
         mockMvc.get("/health")
             .andExpect {
                 status { isOk() }
-                jsonPath("$.status") { value("ok") }
+                jsonPath("$.success") { value(true) }
+                jsonPath("$.data.status") { value("ok") }
             }
     }
 }
