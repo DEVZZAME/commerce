@@ -33,6 +33,29 @@ Kotlin + Spring Boot 기반 이커머스 백엔드 학습 프로젝트입니다.
 - `DB_PORT` default: `3306`
 - `DB_NAME` default: `commerce`
 - `SERVER_PORT` default: `8080`
+- `DB_ROOT_PASSWORD` docker MariaDB root 계정 비밀번호
+
+### Docker MariaDB
+
+1. `.env.example`을 참고해서 `.env` 파일을 생성합니다.
+2. 최소한 `DB_USERNAME`, `DB_PASSWORD`, `DB_ROOT_PASSWORD`를 채웁니다.
+3. 아래 명령으로 MariaDB를 실행합니다.
+
+```bash
+docker compose up -d mariadb
+```
+
+4. 상태 확인:
+
+```bash
+docker compose ps
+```
+
+5. 종료:
+
+```bash
+docker compose down
+```
 
 ### Run Test
 
@@ -49,6 +72,7 @@ SPRING_PROFILES_ACTIVE=local ./gradlew bootRun
 ## Project Structure
 
 ```text
+docker-compose.yml
 src/
   main/
     kotlin/zzame/commerce
@@ -68,4 +92,5 @@ src/
 - `STEP 00-02. Gradle Kotlin DSL 정리` 완료
 - `STEP 00-03. 필수 의존성 추가` 완료
 - `STEP 00-04. application.yml 설정` 완료
-- 다음 진행 예정: `STEP 00-05. docker mariadb 실행 환경 구성`
+- `STEP 00-05. docker mariadb 실행 환경 구성` 완료
+- 다음 진행 예정: `STEP 00-06. QueryDSL 설정 및 QClass 생성 확인`
