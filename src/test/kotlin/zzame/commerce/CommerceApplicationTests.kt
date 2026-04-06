@@ -24,6 +24,7 @@ class CommerceApplicationTests {
             .andExpect {
                 status { isOk() }
                 jsonPath("$.success") { value(true) }
+                jsonPath("$.message") { value("Request succeeded") }
                 jsonPath("$.data.status") { value("ok") }
             }
     }
