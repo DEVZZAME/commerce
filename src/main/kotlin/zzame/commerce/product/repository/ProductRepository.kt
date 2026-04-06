@@ -1,9 +1,6 @@
 package zzame.commerce.product.repository
 
 import zzame.commerce.product.entity.Product
+import org.springframework.data.jpa.repository.JpaRepository
 
-interface ProductRepository {
-    fun findAll(): List<Product>
-    fun findById(id: Long): Product?
-    fun save(product: Product): Product
-}
+interface ProductRepository : JpaRepository<Product, Long>, ProductRepositoryCustom
