@@ -15,14 +15,12 @@ class InMemoryProductRepository : ProductRepository {
     override fun findById(id: Long): Product? = storage[id]
 
     override fun save(product: Product): Product {
-        val persistedProduct = if (product.id == 0L) {
-            product.copy(id = sequence.incrementAndGet())
-        } else {
-            product
+        if (product.id == 0L) {
+            product.assignId(sequence.incrementAndGet())
         }
 
-        storage[persistedProduct.id] = persistedProduct
+        storage[product.id] = product
 
-        return persistedProduct
+        return product
     }
 }
