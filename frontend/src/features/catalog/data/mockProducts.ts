@@ -2,8 +2,8 @@ import type { CartItem, ProductDetail } from "@/shared/types/commerce";
 
 export const productDetails: ProductDetail[] = [
   {
-    id: "keyboard-copper-frame",
-    sellerId: "seller-one",
+    id: 101,
+    sellerId: 1,
     sellerName: "셀러 원 아틀리에",
     name: "코퍼 프레임 키보드",
     subtitle: "차분한 금속 질감과 조용한 타건감을 가진 데스크 키보드",
@@ -23,21 +23,21 @@ export const productDetails: ProductDetail[] = [
     ],
     options: [
       {
-        id: "red-switch",
+        id: 1001,
         name: "레드 스위치",
         description: "가볍고 부드러운 리니어 키감",
         additionalPrice: 0,
         stock: 12,
       },
       {
-        id: "blue-switch",
+        id: 1002,
         name: "블루 스위치",
         description: "확실한 클릭감을 가진 촉각 피드백",
         additionalPrice: 12000,
         stock: 7,
       },
       {
-        id: "brass-weight",
+        id: 1003,
         name: "브라스 웨이트 세트",
         description: "하판 무게를 높여 더 묵직한 타건감 제공",
         additionalPrice: 22000,
@@ -46,8 +46,8 @@ export const productDetails: ProductDetail[] = [
     ],
   },
   {
-    id: "walnut-monitor-stand",
-    sellerId: "forest-supply",
+    id: 102,
+    sellerId: 2,
     sellerName: "포레스트 서플라이",
     name: "월넛 모니터 스탠드",
     subtitle: "원목 질감과 수납 기능을 함께 가진 데스크 정리용 스탠드",
@@ -67,14 +67,14 @@ export const productDetails: ProductDetail[] = [
     ],
     options: [
       {
-        id: "single-drawer",
+        id: 2001,
         name: "싱글 서랍형",
         description: "기본 수납 구조",
         additionalPrice: 0,
         stock: 20,
       },
       {
-        id: "double-drawer",
+        id: 2002,
         name: "더블 서랍형",
         description: "좌우 분리 수납 가능",
         additionalPrice: 18000,
@@ -83,8 +83,8 @@ export const productDetails: ProductDetail[] = [
     ],
   },
   {
-    id: "canvas-cable-tray",
-    sellerId: "atelier-goods",
+    id: 103,
+    sellerId: 3,
     sellerName: "아틀리에 굿즈",
     name: "캔버스 케이블 트레이",
     subtitle: "하단 배선 정리에 적합한 패브릭 케이블 트레이",
@@ -104,14 +104,14 @@ export const productDetails: ProductDetail[] = [
     ],
     options: [
       {
-        id: "sand",
+        id: 3001,
         name: "샌드 컬러",
         description: "밝은 우드 톤 책상과 조화로운 색상",
         additionalPrice: 0,
         stock: 23,
       },
       {
-        id: "charcoal",
+        id: 3002,
         name: "차콜 컬러",
         description: "어두운 책상과 어울리는 대비감",
         additionalPrice: 0,
@@ -124,8 +124,9 @@ export const productDetails: ProductDetail[] = [
 export const cartItems: CartItem[] = [
   {
     id: "cart-item-1",
-    productId: "keyboard-copper-frame",
+    productId: 101,
     name: "코퍼 프레임 키보드",
+    optionId: 1001,
     optionName: "레드 스위치",
     quantity: 1,
     price: 189000,
@@ -135,8 +136,9 @@ export const cartItems: CartItem[] = [
   },
   {
     id: "cart-item-2",
-    productId: "canvas-cable-tray",
+    productId: 103,
     name: "캔버스 케이블 트레이",
+    optionId: 3001,
     optionName: "샌드 컬러",
     quantity: 2,
     price: 34000,

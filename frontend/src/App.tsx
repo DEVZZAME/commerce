@@ -1,4 +1,6 @@
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { CartProvider } from "@/features/cart/state/CartContext";
+import { CheckoutPage } from "@/pages/checkout/CheckoutPage";
 import { AppLayout } from "@/widgets/layout/AppLayout";
 import { CartPage } from "@/pages/cart/CartPage";
 import { HomePage } from "@/pages/home/HomePage";
@@ -14,13 +16,18 @@ const router = createBrowserRouter([
       { path: "products", element: <ProductListPage /> },
       { path: "products/:productId", element: <ProductDetailPage /> },
       { path: "cart", element: <CartPage /> },
+      { path: "checkout", element: <CheckoutPage /> },
       { path: "publishing", element: <Navigate to="/products" replace /> },
     ],
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+  );
 }
 
 export default App;

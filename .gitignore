@@ -49,3 +49,8 @@ out/
 ### Frontend ###
 frontend/node_modules/
 frontend/dist/
+frontend/.env*
+!frontend/.env.sample
+frontend/*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts

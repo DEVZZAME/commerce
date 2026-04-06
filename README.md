@@ -2,7 +2,7 @@
 
 Kotlin + Spring Boot 기반 이커머스 백엔드 학습 프로젝트입니다.
 
-현재는 프로젝트 초기 생성 단계까지 완료된 상태이며, 이후 `curriculum.md`와 `progress.md`를 기준으로 step by step으로 구현을 진행합니다.
+현재는 백엔드 3단계, 퍼블리싱 4단계, 프론트엔드 6단계까지 진행된 상태이며, 이후 `curriculum.md`와 `progress.md`를 기준으로 step by step으로 구현을 이어갑니다.
 
 ## Tech Stack
 
@@ -10,6 +10,9 @@ Kotlin + Spring Boot 기반 이커머스 백엔드 학습 프로젝트입니다.
 - Spring Boot 3.5.13
 - Gradle 8.14.4
 - Java 17
+- React 18
+- TypeScript 5
+- Vite 5
 
 ## Getting Started
 
@@ -80,6 +83,26 @@ SPRING_PROFILES_ACTIVE=local ./gradlew bootRun
 SPRING_PROFILES_ACTIVE=prod ./gradlew bootRun
 ```
 
+### Frontend Development
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+- 기본 개발 주소: `http://localhost:5173`
+- 상품 목록: `http://localhost:5173/products`
+- 상품 상세: `http://localhost:5173/products/101`
+- 장바구니: `http://localhost:5173/cart`
+- 주문/결제: `http://localhost:5173/checkout`
+
+프론트 환경변수 예시는 `frontend/.env.sample`을 참고합니다.
+
+- `VITE_API_BASE_URL`: 브라우저에서 사용할 API 기본 경로, 기본값 `/api`
+- `VITE_DEV_API_TARGET`: Vite dev server proxy 대상, 기본값 `http://localhost:8080`
+- `VITE_USE_MOCK_ORDER`: 주문 요청을 mock 처리할지 여부, 기본값 `true`
+
 ## Project Structure
 
 ```text
@@ -99,9 +122,7 @@ src/
 
 ## Current Status
 
-- `STEP 00-01. IntelliJ에서 Spring Boot Kotlin 프로젝트 생성` 완료
-- `STEP 00-02. Gradle Kotlin DSL 정리` 완료
-- `STEP 00-03. 필수 의존성 추가` 완료
-- `STEP 00-04. application.yml 설정` 완료
-- `STEP 00-05. docker mariadb 실행 환경 구성` 완료
-- 다음 진행 예정: `STEP 00-06. QueryDSL 설정 및 QClass 생성 확인`
+- 백엔드 `0단계` ~ `3단계` 완료
+- 퍼블리싱 `4단계` 완료
+- 프론트엔드 `5단계`, `6단계` 완료
+- 다음 진행 예정: `STEP 07-01. 장바구니 엔티티 및 API 구현`

@@ -7,6 +7,7 @@ const navigationItems: NavigationItem[] = [
   { to: "/", label: "홈" },
   { to: "/products", label: "상품 목록" },
   { to: "/cart", label: "장바구니" },
+  { to: "/checkout", label: "주문 / 결제" },
 ];
 
 export function AppLayout() {

@@ -1,5 +1,5 @@
 export type ProductOption = {
-  id: string;
+  id: number;
   name: string;
   description: string;
   additionalPrice: number;
@@ -7,8 +7,8 @@ export type ProductOption = {
 };
 
 export type ProductSummary = {
-  id: string;
-  sellerId: string;
+  id: number;
+  sellerId: number;
   sellerName: string;
   name: string;
   subtitle: string;
@@ -29,9 +29,10 @@ export type ProductDetail = ProductSummary & {
 
 export type CartItem = {
   id: string;
-  productId: string;
+  productId: number;
   name: string;
   optionName: string;
+  optionId: number;
   quantity: number;
   price: number;
   sellerName: string;
@@ -42,4 +43,20 @@ export type CartItem = {
 export type NavigationItem = {
   to: string;
   label: string;
+};
+
+export type CheckoutFormValues = {
+  recipientName: string;
+  phone: string;
+  address: string;
+  detailAddress: string;
+  deliveryRequest: string;
+};
+
+export type CheckoutFormErrors = Partial<Record<keyof CheckoutFormValues, string>>;
+
+export type OrderReceipt = {
+  orderNumber: string;
+  submittedAt: string;
+  totalPrice: number;
 };
