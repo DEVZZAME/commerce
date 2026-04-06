@@ -1,5 +1,7 @@
 package zzame.commerce.product.dto
 
+import zzame.commerce.common.util.trimToNull
+
 data class ProductCreateRequest(
     val sellerId: Long,
     val name: String,
@@ -7,5 +9,5 @@ data class ProductCreateRequest(
     val description: String?,
 ) {
     val normalizedDescription: String?
-        get() = description?.trim()?.takeIf { it.isNotEmpty() }
+        get() = description.trimToNull()
 }

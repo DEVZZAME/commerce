@@ -1,5 +1,7 @@
 package zzame.commerce.product.dto
 
+import zzame.commerce.common.util.trimToNull
+
 data class ProductResponse(
     val id: Long,
     val sellerId: Long,
@@ -22,7 +24,7 @@ data class ProductResponse(
             sellerId = sellerId,
             name = name,
             price = price,
-            description = description?.trim()?.takeIf { it.isNotEmpty() },
+            description = description.trimToNull(),
         )
     }
 }
