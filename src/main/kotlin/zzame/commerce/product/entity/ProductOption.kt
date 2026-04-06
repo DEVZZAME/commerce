@@ -86,6 +86,21 @@ class ProductOption protected constructor(
         updatedAt = LocalDateTime.now()
     }
 
+    fun deductStock(quantity: Int) {
+        val validQuantity = requireNonNegativeStock(quantity)
+
+        if (validQuantity == 0) {
+            return
+        }
+
+        if (stockQuantity < validQuantity) {
+            throw IllegalStateException("stockQuantity is insufficient")
+        }
+
+        stockQuantity -= validQuantity
+        updatedAt = LocalDateTime.now()
+    }
+
     @PrePersist
     fun prePersist() {
         val now = LocalDateTime.now()

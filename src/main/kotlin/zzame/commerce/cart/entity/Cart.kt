@@ -80,6 +80,11 @@ class Cart protected constructor(
         return removed
     }
 
+    fun clearItems() {
+        itemList.clear()
+        updatedAt = LocalDateTime.now()
+    }
+
     fun totalPrice(): Long = itemList.sumOf(CartItem::linePrice)
 
     fun totalQuantity(): Int = itemList.sumOf(CartItem::quantity)
