@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List Publishing</title>
+  <link rel="stylesheet" href="/publishing/assets/css/publishing.css">
+</head>
+<body class="publishing-body">
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="site-header__bar">
+        <a class="brand" href="/publishing/index.html">
+          <span class="brand-mark">CM</span>
+          <span class="brand-copy">
+            <small>Category Curation</small>
+            <strong>Autumn Workspace</strong>
+          </span>
+        </a>
+        <nav class="main-nav">
+          <a class="nav-link" href="/publishing/index.html">Overview</a>
+          <a class="nav-link is-active" href="/publishing/product-list.html">List</a>
+          <a class="nav-link" href="/publishing/product-detail.html">Detail</a>
+          <a class="nav-link" href="/publishing/cart.html">Cart</a>
+          <a class="nav-link" href="/publishing/checkout.html">Checkout</a>
+          <a class="nav-link" href="/publishing/ui-kit.html">UI Kit</a>
+        </nav>
+        <div class="header-actions">
+          <a class="button button--secondary" href="/publishing/cart.html">Cart 2</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-card">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Living Desk Edit</span>
+          <h1 class="headline">Tools and surfaces that keep a long workday calm.</h1>
+          <p class="subcopy">
+            업무 공간을 다듬는 키보드, 모니터 스탠드, 조명, 수납 제품을 에디토리얼 큐레이션 방식으로 소개하는 목록 화면이다.
+          </p>
+          <div class="hero-metrics">
+            <div class="metric">
+              <strong>124</strong>
+              <span>products curated</span>
+            </div>
+            <div class="metric">
+              <strong>09</strong>
+              <span>active filters</span>
+            </div>
+            <div class="metric">
+              <strong>48h</strong>
+              <span>dispatch promise</span>
+            </div>
+          </div>
+        </div>
+        <div class="story-card">
+          <span class="meta-kicker">Campaign note</span>
+          <h2 class="section-title">A quieter desk, shaped by small material choices.</h2>
+          <p class="section-caption">
+            원목, 알루미늄, 패브릭 질감이 섞인 상품만 별도로 편집해 노출하는 메인 큐레이션 블록.
+          </p>
+          <div class="tag-row">
+            <span class="chip is-active">Desk Setup</span>
+            <span class="chip">Mechanical</span>
+            <span class="chip">Storage</span>
+            <span class="chip">Lighting</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <aside class="aside-stack">
+        <section class="panel">
+          <h2 class="panel-title">Category</h2>
+          <div class="chip-row">
+            <span class="chip is-active">All</span>
+            <span class="chip">Keyboard</span>
+            <span class="chip">Display</span>
+            <span class="chip">Storage</span>
+            <span class="chip">Lighting</span>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2 class="panel-title">Filter</h2>
+          <div class="section-stack">
+            <div class="filter-group">
+              <label class="field-label" for="search">Keyword</label>
+              <input id="search" class="field" type="text" value="keyboard">
+            </div>
+            <div class="filter-group">
+              <label class="field-label" for="price">Price Range</label>
+              <select id="price" class="select">
+                <option>70,000원 이상</option>
+                <option>150,000원 이상</option>
+                <option>300,000원 이상</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="field-label" for="sort">Sort</label>
+              <select id="sort" class="select">
+                <option>Newest</option>
+                <option>Price High to Low</option>
+                <option>Most Loved</option>
+              </select>
+            </div>
+            <a class="button button--primary" href="/publishing/product-list.html">Apply filters</a>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2 class="panel-title">Editorial Pick</h2>
+          <p class="muted">브론즈 톤 하우징과 패브릭 케이블 조합이 돋보이는 제품군을 묶어서 강조한다.</p>
+        </section>
+      </aside>
+
+      <div class="section-stack">
+        <section class="panel">
+          <div class="utility-row">
+            <div>
+              <span class="eyebrow">Result</span>
+              <h2 class="section-title">124 products, 16 featured</h2>
+            </div>
+            <div class="tag-row">
+              <span class="chip is-active">Fast dispatch</span>
+              <span class="chip">Limited finish</span>
+              <span class="chip">Bundle savings</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="product-grid">
+          <article class="product-card">
+            <div class="product-card__media">
+              <span class="media-badge">Signature</span>
+            </div>
+            <div class="product-card__body">
+              <span class="eyebrow">Seller One</span>
+              <h2 class="product-card__title">Copper Frame Keyboard</h2>
+              <p class="muted">부드러운 타건감과 따뜻한 금속 마감이 중심인 프리미엄 데스크 키보드.</p>
+              <div class="price-row">
+                <div class="price-block">
+                  <strong>189,000원</strong>
+                  <span>무료배송 · 2일 내 출고</span>
+                </div>
+                <a class="button button--accent" href="/publishing/product-detail.html">View</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <span class="media-badge">New</span>
+            </div>
+            <div class="product-card__body">
+              <span class="eyebrow">Forest Supply</span>
+              <h2 class="product-card__title">Walnut Monitor Stand</h2>
+              <p class="muted">케이블 수납과 서랍 기능을 함께 가진 원목 모니터 스탠드.</p>
+              <div class="price-row">
+                <div class="price-block">
+                  <strong>82,000원</strong>
+                  <span>브랜드 직배송</span>
+                </div>
+                <a class="button button--secondary" href="/publishing/product-detail.html">Open</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <span class="media-badge">Bundle</span>
+            </div>
+            <div class="product-card__body">
+              <span class="eyebrow">Quiet Studio</span>
+              <h2 class="product-card__title">Desk Light Pair</h2>
+              <p class="muted">차분한 확산광을 제공하는 데스크 조명 세트.</p>
+              <div class="price-row">
+                <div class="price-block">
+                  <strong>116,000원</strong>
+                  <span>2개 세트 8% 할인</span>
+                </div>
+                <a class="button button--secondary" href="/publishing/product-detail.html">Open</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <span class="media-badge">Popular</span>
+            </div>
+            <div class="product-card__body">
+              <span class="eyebrow">Atelier Goods</span>
+              <h2 class="product-card__title">Canvas Cable Tray</h2>
+              <p class="muted">하단 배선 정리에 최적화된 패브릭 케이블 트레이.</p>
+              <div class="price-row">
+                <div class="price-block">
+                  <strong>34,000원</strong>
+                  <span>당일 출고 가능</span>
+                </div>
+                <a class="button button--secondary" href="/publishing/product-detail.html">Open</a>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

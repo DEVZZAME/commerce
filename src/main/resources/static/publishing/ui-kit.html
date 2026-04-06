@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publishing UI Kit</title>
+  <link rel="stylesheet" href="/publishing/assets/css/publishing.css">
+</head>
+<body class="publishing-body">
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="site-header__bar">
+        <a class="brand" href="/publishing/index.html">
+          <span class="brand-mark">CM</span>
+          <span class="brand-copy">
+            <small>Shared System</small>
+            <strong>Publishing UI Kit</strong>
+          </span>
+        </a>
+        <nav class="main-nav">
+          <a class="nav-link" href="/publishing/index.html">Overview</a>
+          <a class="nav-link" href="/publishing/product-list.html">List</a>
+          <a class="nav-link" href="/publishing/product-detail.html">Detail</a>
+          <a class="nav-link" href="/publishing/cart.html">Cart</a>
+          <a class="nav-link" href="/publishing/checkout.html">Checkout</a>
+          <a class="nav-link is-active" href="/publishing/ui-kit.html">UI Kit</a>
+        </nav>
+        <div class="header-actions">
+          <a class="button button--secondary" href="/publishing/index.html">Back</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-card">
+      <span class="eyebrow">STEP 04-08</span>
+      <h1 class="headline">Shared UI parts for the upcoming React component split.</h1>
+      <p class="subcopy">
+        버튼, 칩, 요약 카드, 입력 필드, 상품 카드가 어떤 시각 규칙을 공유하는지 정리한 화면이다.
+      </p>
+    </section>
+
+    <section class="section-stack" style="margin-top: 28px;">
+      <section class="panel">
+        <h2 class="section-title">Buttons</h2>
+        <div class="chip-row">
+          <button class="button button--primary" type="button">Primary</button>
+          <button class="button button--accent" type="button">Accent</button>
+          <button class="button button--secondary" type="button">Secondary</button>
+          <button class="button button--ghost" type="button">Ghost</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2 class="section-title">Chips & Status</h2>
+        <div class="chip-row">
+          <span class="chip is-active">Selected</span>
+          <span class="chip">Default</span>
+          <span class="chip">Filter</span>
+          <span class="chip">Limited</span>
+        </div>
+      </section>
+
+      <section class="ui-grid">
+        <article class="ui-card">
+          <h2 class="section-title">Form Field</h2>
+          <div class="section-stack">
+            <input class="field" type="text" value="Copper Frame Keyboard">
+            <select class="select">
+              <option>Price high to low</option>
+            </select>
+            <textarea class="textarea">브랜드 요청 메모 입력 영역</textarea>
+          </div>
+        </article>
+
+        <article class="ui-card">
+          <h2 class="section-title">Summary Card</h2>
+          <div class="summary-line">
+            <span class="meta-text">상품 합계</span>
+            <strong>245,000원</strong>
+          </div>
+          <div class="summary-line">
+            <span class="meta-text">배송비</span>
+            <strong>0원</strong>
+          </div>
+          <div class="summary-total">
+            <span>Total</span>
+            <strong>245,000원</strong>
+          </div>
+        </article>
+
+        <article class="ui-card">
+          <h2 class="section-title">Product Card</h2>
+          <article class="product-card">
+            <div class="product-card__media">
+              <span class="media-badge">New</span>
+            </div>
+            <div class="product-card__body">
+              <span class="eyebrow">Seller One</span>
+              <h3 class="product-card__title">Copper Frame Keyboard</h3>
+              <div class="price-row">
+                <div class="price-block">
+                  <strong>189,000원</strong>
+                  <span>48시간 내 출고</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </article>
+
+        <article class="ui-card">
+          <h2 class="section-title">Radio Card</h2>
+          <div class="radio-stack">
+            <div class="radio-card is-selected">
+              <strong>신용카드</strong>
+              <span class="meta-text">가장 기본적인 결제 수단</span>
+            </div>
+            <div class="radio-card">
+              <strong>간편결제</strong>
+              <span class="meta-text">원클릭 결제 흐름</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </section>
+  </div>
+</body>
+</html>

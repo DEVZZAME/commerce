@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Publishing</title>
+  <link rel="stylesheet" href="/publishing/assets/css/publishing.css">
+</head>
+<body class="publishing-body">
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="site-header__bar">
+        <a class="brand" href="/publishing/index.html">
+          <span class="brand-mark">CM</span>
+          <span class="brand-copy">
+            <small>Cart Review</small>
+            <strong>Your Desk Basket</strong>
+          </span>
+        </a>
+        <nav class="main-nav">
+          <a class="nav-link" href="/publishing/index.html">Overview</a>
+          <a class="nav-link" href="/publishing/product-list.html">List</a>
+          <a class="nav-link" href="/publishing/product-detail.html">Detail</a>
+          <a class="nav-link is-active" href="/publishing/cart.html">Cart</a>
+          <a class="nav-link" href="/publishing/checkout.html">Checkout</a>
+          <a class="nav-link" href="/publishing/ui-kit.html">UI Kit</a>
+        </nav>
+        <div class="header-actions">
+          <a class="button button--secondary" href="/publishing/checkout.html">Proceed</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-card">
+      <div class="utility-row">
+        <div>
+          <span class="eyebrow">Cart snapshot</span>
+          <h1 class="headline">A calm, review-friendly cart layout before conversion.</h1>
+          <p class="subcopy">
+            장바구니 화면은 상품군별 묶음, 배송 정책, 총액 계산을 빠르게 훑을 수 있어야 한다.
+            모바일에서는 하단 CTA가 가장 중요한 요소다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cart-layout" style="margin-top: 28px;">
+      <div class="section-stack">
+        <section class="panel">
+          <div class="utility-row">
+            <div>
+              <span class="eyebrow">Seller One</span>
+              <h2 class="section-title">2 items shipping together</h2>
+            </div>
+            <span class="chip is-active">Free shipping</span>
+          </div>
+          <div class="cart-list">
+            <article class="cart-item">
+              <div class="cart-item__media"></div>
+              <div class="cart-item__meta">
+                <div>
+                  <h3 class="cart-item__title">Copper Frame Keyboard</h3>
+                  <span class="meta-text">Red Switch · 수량 1</span>
+                </div>
+                <div class="price-row">
+                  <div class="price-block">
+                    <strong>189,000원</strong>
+                    <span>출고 예상 2일</span>
+                  </div>
+                  <a class="button button--secondary" href="/publishing/product-detail.html">Edit</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="cart-item">
+              <div class="cart-item__media"></div>
+              <div class="cart-item__meta">
+                <div>
+                  <h3 class="cart-item__title">Canvas Cable Tray</h3>
+                  <span class="meta-text">Natural fabric · 수량 2</span>
+                </div>
+                <div class="price-row">
+                  <div class="price-block">
+                    <strong>68,000원</strong>
+                    <span>오늘 출고 가능</span>
+                  </div>
+                  <a class="button button--secondary" href="/publishing/product-detail.html">Edit</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2 class="section-title">You may also add</h2>
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="product-card__media"></div>
+              <div class="product-card__body">
+                <span class="eyebrow">Desk Accent</span>
+                <h3 class="product-card__title">Brass Wrist Rest</h3>
+                <div class="price-row">
+                  <div class="price-block">
+                    <strong>44,000원</strong>
+                    <span>같이 배송 가능</span>
+                  </div>
+                  <a class="button button--ghost" href="/publishing/product-detail.html">Add</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-card__media"></div>
+              <div class="product-card__body">
+                <span class="eyebrow">Light</span>
+                <h3 class="product-card__title">Low Glare Desk Lamp</h3>
+                <div class="price-row">
+                  <div class="price-block">
+                    <strong>58,000원</strong>
+                    <span>광량 3단 조절</span>
+                  </div>
+                  <a class="button button--ghost" href="/publishing/product-detail.html">Add</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <aside class="aside-stack">
+        <section class="summary-card">
+          <h2 class="summary-title">Order Summary</h2>
+          <div class="summary-line">
+            <span class="meta-text">상품 금액</span>
+            <strong>257,000원</strong>
+          </div>
+          <div class="summary-line">
+            <span class="meta-text">배송비</span>
+            <strong>0원</strong>
+          </div>
+          <div class="summary-line">
+            <span class="meta-text">프로모션 할인</span>
+            <strong>-12,000원</strong>
+          </div>
+          <div class="summary-total">
+            <span>Total</span>
+            <strong>245,000원</strong>
+          </div>
+          <div class="section-stack">
+            <a class="button button--accent" href="/publishing/checkout.html">Checkout</a>
+            <a class="button button--secondary" href="/publishing/product-list.html">Continue shopping</a>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2 class="panel-title">Shipping note</h2>
+          <p class="muted">오늘 오후 3시 이전 결제 완료 시 평일 기준 48시간 내 출고.</p>
+        </section>
+      </aside>
+    </section>
+  </div>
+
+  <div class="mobile-sticky">
+    <a class="button button--secondary" href="/publishing/product-list.html">More items</a>
+    <a class="button button--accent" href="/publishing/checkout.html">Checkout 245,000원</a>
+  </div>
+</body>
+</html>

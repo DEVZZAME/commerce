@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Publishing</title>
+  <link rel="stylesheet" href="/publishing/assets/css/publishing.css">
+</head>
+<body class="publishing-body">
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="site-header__bar">
+        <a class="brand" href="/publishing/index.html">
+          <span class="brand-mark">CM</span>
+          <span class="brand-copy">
+            <small>Checkout Flow</small>
+            <strong>Final Confirmation</strong>
+          </span>
+        </a>
+        <nav class="main-nav">
+          <a class="nav-link" href="/publishing/index.html">Overview</a>
+          <a class="nav-link" href="/publishing/product-list.html">List</a>
+          <a class="nav-link" href="/publishing/product-detail.html">Detail</a>
+          <a class="nav-link" href="/publishing/cart.html">Cart</a>
+          <a class="nav-link is-active" href="/publishing/checkout.html">Checkout</a>
+          <a class="nav-link" href="/publishing/ui-kit.html">UI Kit</a>
+        </nav>
+        <div class="header-actions">
+          <a class="button button--secondary" href="/publishing/cart.html">Back to cart</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-card">
+      <div class="progress">
+        <div class="progress-step">1. Cart review</div>
+        <div class="progress-step is-active">2. Shipping & payment</div>
+        <div class="progress-step">3. Order completion</div>
+      </div>
+      <h1 class="headline">A checkout layout built to reduce hesitation.</h1>
+      <p class="subcopy">
+        입력 필드와 요약 영역을 과하게 분리하지 않고, 데스크톱에서는 양쪽에 동시에 노출해 맥락 전환을 줄인다.
+      </p>
+    </section>
+
+    <section class="checkout-grid" style="margin-top: 28px;">
+      <div class="section-stack">
+        <section class="form-card">
+          <span class="eyebrow">Shipping information</span>
+          <h2 class="section-title">Recipient details</h2>
+          <div class="checkout-form">
+            <div>
+              <label class="field-label" for="name">받는 분</label>
+              <input id="name" class="field" type="text" value="한솔">
+            </div>
+            <div>
+              <label class="field-label" for="phone">연락처</label>
+              <input id="phone" class="field" type="text" value="010-1234-5678">
+            </div>
+            <div class="field-span-2">
+              <label class="field-label" for="address">기본 주소</label>
+              <input id="address" class="field" type="text" value="서울시 성동구 성수동 1가 00-00">
+            </div>
+            <div class="field-span-2">
+              <label class="field-label" for="detail">상세 주소</label>
+              <input id="detail" class="field" type="text" value="00빌딩 5층 501호">
+            </div>
+            <div class="field-span-2">
+              <label class="field-label" for="memo">배송 메모</label>
+              <textarea id="memo" class="textarea">부재 시 문 앞에 놓아주세요.</textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="form-card">
+          <span class="eyebrow">Payment</span>
+          <h2 class="section-title">Choose a payment method</h2>
+          <div class="radio-stack">
+            <div class="radio-card is-selected">
+              <strong>신용카드 / 체크카드</strong>
+              <span class="meta-text">무이자 혜택 및 포인트 적립 가능</span>
+            </div>
+            <div class="radio-card">
+              <strong>간편결제</strong>
+              <span class="meta-text">네이버페이, 카카오페이, 토스페이</span>
+            </div>
+            <div class="radio-card">
+              <strong>무통장 입금</strong>
+              <span class="meta-text">입금 확인 후 상품 준비 시작</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="aside-stack">
+        <section class="summary-card">
+          <h2 class="summary-title">Order Summary</h2>
+          <div class="summary-line">
+            <span class="meta-text">Copper Frame Keyboard</span>
+            <strong>189,000원</strong>
+          </div>
+          <div class="summary-line">
+            <span class="meta-text">Canvas Cable Tray x2</span>
+            <strong>68,000원</strong>
+          </div>
+          <div class="summary-line">
+            <span class="meta-text">프로모션 할인</span>
+            <strong>-12,000원</strong>
+          </div>
+          <div class="summary-total">
+            <span>Total</span>
+            <strong>245,000원</strong>
+          </div>
+          <div class="section-stack">
+            <a class="button button--accent" href="/publishing/checkout.html">Place order</a>
+            <a class="button button--secondary" href="/publishing/cart.html">Review cart again</a>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2 class="panel-title">Assurance</h2>
+          <div class="detail-meta">
+            <span class="meta-text">SSL secured checkout</span>
+            <span class="meta-text">7일 이내 반품 가능</span>
+            <span class="meta-text">결제 완료 즉시 주문 내역 발송</span>
+          </div>
+        </section>
+      </aside>
+    </section>
+  </div>
+
+  <div class="mobile-sticky">
+    <a class="button button--secondary" href="/publishing/cart.html">Back</a>
+    <a class="button button--accent" href="/publishing/checkout.html">Place order</a>
+  </div>
+</body>
+</html>
