@@ -5,4 +5,7 @@ data class ProductCreateRequest(
     val name: String,
     val price: Long,
     val description: String?,
-)
+) {
+    val normalizedDescription: String?
+        get() = description?.trim()?.takeIf { it.isNotEmpty() }
+}
