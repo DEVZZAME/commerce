@@ -1,9 +1,16 @@
 spring:
+  cache:
+    type: redis
   datasource:
-    url: jdbc:mariadb://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    url: jdbc:mariadb://${DB_HOST:commerce-mariadb}:${DB_PORT:3306}/${DB_NAME:commerce}
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: org.mariadb.jdbc.Driver
+  data:
+    redis:
+      host: ${REDIS_HOST:commerce-redis}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
   jpa:
     open-in-view: false
     hibernate:
@@ -13,3 +20,8 @@ spring:
         format_sql: false
         jdbc:
           time_zone: UTC
+
+logging:
+  level:
+    org.hibernate.SQL: info
+    org.hibernate.orm.jdbc.bind: off

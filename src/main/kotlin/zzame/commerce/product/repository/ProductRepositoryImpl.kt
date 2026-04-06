@@ -4,11 +4,14 @@ import com.querydsl.core.BooleanBuilder
 import com.querydsl.core.types.Order
 import com.querydsl.core.types.OrderSpecifier
 import com.querydsl.core.types.Projections
-import com.querydsl.core.types.dsl.Expressions
 import com.querydsl.jpa.impl.JPAQueryFactory
 import zzame.commerce.product.dto.ProductSearchCondition
+import zzame.commerce.product.dto.ProductPopularityResponse
 import zzame.commerce.product.dto.ProductSummaryResponse
 import zzame.commerce.product.entity.Product
+import zzame.commerce.order.entity.PaymentStatus
+import zzame.commerce.order.entity.QOrder.order
+import zzame.commerce.order.entity.QOrderItem.orderItem
 import zzame.commerce.product.entity.QProduct.product
 import zzame.commerce.product.entity.QProductOption.productOption
 import zzame.commerce.product.entity.QSeller.seller
@@ -64,6 +67,41 @@ class ProductRepositoryImpl(
         .where(product.id.eq(productId))
         .distinct()
         .fetchOne()
+
+    override fun findPopularProducts(limit: Int): List<ProductPopularityResponse> {
+        val totalSoldQuantity = orderItem.quantity.sum()
+
+        return queryFactory
+            .select(
+                Projections.constructor(
+                    ProductPopularityResponse::class.java,
+                    product.id,
+                    seller.id,
+                    seller.name,
+                    product.name,
+                    product.price,
+                    product.status,
+                    totalSoldQuantity,
+                ),
+            )
+            .from(orderItem)
+            .join(orderItem.order, order)
+            .join(orderItem.product, product)
+            .join(product.seller, seller)
+            .where(order.paymentStatus.eq(PaymentStatus.PAID))
+            .groupBy(
+                product.id,
+                seller.id,
+                seller.name,
+                product.name,
+                product.price,
+                product.status,
+                product.createdAt,
+            )
+            .orderBy(totalSoldQuantity.desc(), product.createdAt.desc())
+            .limit(limit.toLong())
+            .fetch()
+    }
 
     private fun buildWhereClause(condition: ProductSearchCondition): BooleanBuilder = BooleanBuilder()
         .apply {

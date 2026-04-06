@@ -12,6 +12,7 @@ import jakarta.persistence.ManyToOne
 import jakarta.persistence.PrePersist
 import jakarta.persistence.PreUpdate
 import jakarta.persistence.Table
+import jakarta.persistence.Version
 import java.time.LocalDateTime
 
 @Entity
@@ -41,6 +42,9 @@ class ProductOption protected constructor(
 
     @Column(nullable = false)
     var updatedAt: LocalDateTime = LocalDateTime.now(),
+
+    @Version
+    var version: Long? = null,
 ) {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false)

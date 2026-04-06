@@ -1,8 +1,8 @@
 # commerce
 
-Kotlin + Spring Boot 기반 이커머스 백엔드 학습 프로젝트입니다.
+Kotlin + Spring Boot + React 기반 이커머스 풀스택 학습 프로젝트입니다.
 
-현재는 백엔드 3단계, 퍼블리싱 4단계, 프론트엔드 6단계까지 진행된 상태이며, 이후 `curriculum.md`와 `progress.md`를 기준으로 step by step으로 구현을 이어갑니다.
+`curriculum.md`와 `progress.md` 기준으로 0단계부터 9단계까지 전 구간을 구현한 상태입니다.
 
 ## Tech Stack
 
@@ -13,6 +13,7 @@ Kotlin + Spring Boot 기반 이커머스 백엔드 학습 프로젝트입니다.
 - React 18
 - TypeScript 5
 - Vite 5
+- Redis 7
 
 ## Getting Started
 
@@ -20,13 +21,14 @@ Kotlin + Spring Boot 기반 이커머스 백엔드 학습 프로젝트입니다.
 
 - JDK 17
 - MariaDB 10.x or later
+- Redis 7.x for `prod` profile cache
 
 ### Environment Variables
 
 프로필은 `local`, `prod`로 분리되어 있습니다.
 
 - `local`: 애플리케이션이 `localhost:3306/commerce`로 직접 연결
-- `prod`: 모든 DB 접속 정보를 환경변수에서 읽어서 연결
+- `prod`: MariaDB + Redis를 환경변수에서 읽어서 연결
 
 필수 환경변수:
 
@@ -40,24 +42,43 @@ Kotlin + Spring Boot 기반 이커머스 백엔드 학습 프로젝트입니다.
 - `DB_NAME` default: `commerce`
 - `SERVER_PORT` default: `8080`
 - `DB_ROOT_PASSWORD` docker MariaDB root 계정 비밀번호
+- `REDIS_HOST` default: `localhost` in direct run, `redis` in docker compose
+- `REDIS_PORT` default: `6379`
+- `REDIS_PASSWORD` optional
 
-### Docker MariaDB
-
-1. `.env.example`을 참고해서 `.env` 파일을 생성합니다.
-2. 최소한 `DB_USERNAME`, `DB_PASSWORD`, `DB_ROOT_PASSWORD`를 채웁니다.
-3. 아래 명령으로 MariaDB를 실행합니다.
+프로젝트 루트 `.env` 예시:
 
 ```bash
-docker compose up -d mariadb
+DB_USERNAME=commerce
+DB_PASSWORD=commerce1234
+DB_ROOT_PASSWORD=root1234
+SERVER_PORT=8080
+REDIS_PASSWORD=
 ```
 
-4. 상태 확인:
+### Docker Services
+
+1. 프로젝트 루트에 `.env` 파일을 생성합니다.
+2. 최소한 `DB_USERNAME`, `DB_PASSWORD`, `DB_ROOT_PASSWORD`를 채웁니다.
+3. 인프라만 올릴 때:
+
+```bash
+docker compose up -d mariadb redis
+```
+
+4. 애플리케이션까지 포함해 실행할 때:
+
+```bash
+docker compose up --build app
+```
+
+5. 상태 확인:
 
 ```bash
 docker compose ps
 ```
 
-5. 종료:
+6. 종료:
 
 ```bash
 docker compose down
@@ -75,13 +96,36 @@ docker compose down
 SPRING_PROFILES_ACTIVE=local ./gradlew bootRun
 ```
 
-`bootRun`은 프로젝트 루트의 `.env`를 자동으로 읽습니다.
+`bootRun`은 프로젝트 루트의 `.env`를 자동으로 읽습니다. `local`에서는 Redis 없이도 실행되고, 캐시는 메모리 캐시로 동작합니다.
 
 프로덕션 프로필 예시:
 
 ```bash
 SPRING_PROFILES_ACTIVE=prod ./gradlew bootRun
 ```
+
+`prod`는 Redis 캐시를 사용합니다.
+
+### Build Container Image
+
+```bash
+./gradlew bootJar
+docker build -t commerce-app .
+```
+
+### 주요 백엔드 API
+
+- `GET /health`
+- `GET /api/products`
+- `GET /api/products/{productId}`
+- `GET /api/products/popular`
+- `POST /api/products`
+- `GET /api/carts/{customerId}`
+- `POST /api/carts/{customerId}/items`
+- `DELETE /api/carts/{customerId}/items/{cartItemId}`
+- `POST /api/orders`
+- `POST /api/orders/{orderId}/payments/complete`
+- `GET /api/orders`
 
 ### Frontend Development
 
@@ -125,4 +169,5 @@ src/
 - 백엔드 `0단계` ~ `3단계` 완료
 - 퍼블리싱 `4단계` 완료
 - 프론트엔드 `5단계`, `6단계` 완료
-- 다음 진행 예정: `STEP 07-01. 장바구니 엔티티 및 API 구현`
+- 도메인/안정성/운영 단계 `7단계` ~ `9단계` 완료
+- 다음 진행 예정: 추가 기능 확장 또는 리팩토링

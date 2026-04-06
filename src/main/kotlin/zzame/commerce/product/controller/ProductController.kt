@@ -3,6 +3,7 @@ package zzame.commerce.product.controller
 import zzame.commerce.common.response.PageResponse
 import zzame.commerce.common.response.RestResponse
 import zzame.commerce.product.dto.ProductCreateRequest
+import zzame.commerce.product.dto.ProductPopularityResponse
 import zzame.commerce.product.dto.ProductResponse
 import zzame.commerce.product.dto.ProductSearchRequest
 import zzame.commerce.product.dto.ProductSummaryResponse
@@ -23,6 +24,14 @@ import org.springframework.web.bind.annotation.RestController
 class ProductController(
     private val productService: ProductService,
 ) {
+    @GetMapping("/popular")
+    fun getPopularProducts(
+        @org.springframework.web.bind.annotation.RequestParam(defaultValue = "6") limit: Int,
+    ): RestResponse<List<ProductPopularityResponse>> = RestResponse.success(
+        data = productService.getPopularProducts(limit),
+        message = "Popular products fetched successfully",
+    )
+
     @GetMapping
     fun getProducts(
         @Valid @ModelAttribute searchRequest: ProductSearchRequest,

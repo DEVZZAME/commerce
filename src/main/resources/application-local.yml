@@ -1,4 +1,6 @@
 spring:
+  cache:
+    type: simple
   datasource:
     url: jdbc:mariadb://localhost:3306/commerce
     username: ${DB_USERNAME}
